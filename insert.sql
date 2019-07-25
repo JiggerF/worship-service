@@ -66,3 +66,7 @@ INSERT INTO service (
     MusoListId) 
 VALUES ('Sunday Clyde', datetime('now'),
     2, 21, 32);
+
+
+/* QUERY: Give me all songs for a service*/
+/* select * from service s INNER JOIN (select * from songlist INNER JOIN song ON songlist.SongId = song.SongId) */
