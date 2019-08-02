@@ -69,4 +69,6 @@ VALUES ('Sunday Clyde', datetime('now'),
 
 
 /* QUERY: Give me all songs for a service*/
-/* select * from service s INNER JOIN (select * from songlist INNER JOIN song ON songlist.SongId = song.SongId) */
+/* SELECT SongListId, MusoListId as musolistid FROM service INNER JOIN (SELECT * from songlist INNER JOIN song ON songlist.SongId = song.SongId) */
+
+SELECT ServiceName as sn, MusoListId as mlid, SongTitle as st FROM service srv INNER JOIN (SELECT * from songlist INNER JOIN song where songlist.SongId=song.SongId) 
