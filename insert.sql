@@ -64,9 +64,8 @@ INSERT INTO service (
     CampusId,
     SonglistId,
     MusoListId) 
-VALUES ('Sunday Clyde', datetime('now'),
-    2, 21, 32);
-
+VALUES ('Sunday Clyde', datetime('now'), 2, 21, 32), 
+       ('Sunday Clyde - Fathers Day', datetime('now'), 2, 21, 32);
 
 /* QUERY: Give me all songs for a service*/
 /* SELECT SongListId, MusoListId as musolistid FROM service INNER JOIN (SELECT * from songlist INNER JOIN song ON songlist.SongId = song.SongId) */

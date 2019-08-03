@@ -17,14 +17,12 @@ app.get('/service', (req, res) => {
         var params = []
         db.all(sql, params, (err, rows) => {
             if (err) {
-                res.status(404).json("err:", err.message);
-                return;
+                return res.status(404).json("err:", err.message);
             }
             res.json({
                 "message": "success",
                 "data": rows
         });
-        res.send('Responding to SQL...')
     });
 });
 
@@ -33,8 +31,7 @@ app.get('/service/:id', (req, res) => {
     var params = [req.params.id]
     db.all(sql, params, (err, rows) => {
         if (err){
-            res.status(400).json({"error": err.message});
-            return;
+            return res.status(400).json({"error": err.message});
         }
         res.json({
             "message": "success",
